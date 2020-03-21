@@ -78,6 +78,12 @@ class QuoteController extends Controller
         return view('quotes.single', compact('quote'));
     }
 
+    public function random()
+    {
+        $quote = Quote::inRandomOrder()->first();
+        return view('quotes.single', compact('quote'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

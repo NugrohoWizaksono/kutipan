@@ -5,7 +5,7 @@
     <div class="jumbotron">
         <h1>{{ $quote->title }}</h1>
         <p>{{ $quote->subject }}</p>
-        <p>Ditulis oleh : {{ $quote->user->name }}</p>
+        <p>Ditulis oleh : <a href="/profile/{{$quote->user->id}}">{{ $quote->user->name }}</a></p>
         @if ($quote->isOwner())
             <a href="/quotes/{{ $quote->id }}/edit" class="btn btn-primary">Edit</a>
             <form action="/quotes/{{ $quote->id }}" method="POST">
